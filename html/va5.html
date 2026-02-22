@@ -1,0 +1,57 @@
+   /* ── Header ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+    }
+    .logo span {
+      color: var(--accent2);
+      font-style: italic;
+    }
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .status-dot.listening {
+      background: var(--error);
+      box-shadow: 0 0 8px var(--error);
+      animation: pulse-dot 1s ease-in-out infinite;
+    }
+    .status-dot.thinking {
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse-dot 0.6s ease-in-out infinite;
+    }
+    .status-dot.speaking {
+      background: var(--accent2);
+      box-shadow: 0 0 8px var(--accent2);
+      animation: pulse-dot 0.4s ease-in-out infinite;
+    }
+    .status-dot.ready {
+      background: #50e090;
+      box-shadow: 0 0 6px #50e090;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
